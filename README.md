@@ -11,4 +11,4 @@ As the server will be working with the privileges of Apache user there would be 
 In the /etc/groups folder add the apache group in your docker user by adding it after the third delimiter. The entry should look something like this: docker:x:973:apache.
 This step might not be necessary but if need arises, give some more privileges to the apache group in the /etc/sudoer file. Trying starting with giving the root powers.
 Stop SELinux by setenforce 0.
-And that's it you're good to go!
+And that's it you're good to go...
