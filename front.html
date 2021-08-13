@@ -1,0 +1,69 @@
+ <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="style.css">
+        <script src="https://kit.fontawesome.com/b23a20a39d.js" crossorigin="anonymous"></script>
+        <title>Search Box</title>
+
+</head>
+
+
+
+<div class="login-box">
+    <h2>Docker Web Portal</h2>
+    <form>
+      <div class="user-box">
+        <input id="in1" type="text" name="" required="">
+        <label>Type your command here</label>
+      </div>
+      <a onclick="fn()" href="#">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        Run
+      </a>
+      <div id="ip1" onclick="fn2()"> Images </div> 
+    </form>
+</div>
+
+
+<img id="im1" src="pnfile.png", alt="docker" width="100" height="100"> 
+
+
+<pre>   
+<div id="d1"> >_ your output will be printed here</div>
+</pre>
+
+<script>
+function fn(){
+
+var i = document.getElementById('in1').value;
+var xhr = new XMLHttpRequest();
+xhr.open("POST","http://192.168.43.148/cgi-bin/back.py?x="+i,true);
+
+xhr.send();
+
+xhr.onload = function(){
+    var output=xhr.responseText;
+    document.getElementById("d1").innerHTML=output;
+}
+}
+
+function fn2(){
+
+i="docker images"
+var xhr = new XMLHttpRequest();
+xhr.open("POST","http://192.168.43.148/cgi-bin/back.py?x="+i,true);
+
+xhr.send();
+
+xhr.onload = function(){
+    var output=xhr.responseText;
+    document.getElementById("d1").innerHTML=output;
+}
+}
+
+</script>
+
+
+
